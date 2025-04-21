@@ -1,0 +1,62 @@
+/* ContactUs.css */
+.contact-us {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.contact-us h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contact-us p {
+  /* font-size: 1rem; */
+  margin-bottom: 20px;
+}
+
+.form-Group {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.form-Group label {
+  display: block;
+  font-weight: bold;
+}
+
+.form-Group input,
+.form-Group textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.form-Group textarea {
+  font-size: 14px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-status {
+  margin-top: 20px;
+  color: green;
+}
+
+.contact-footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #777;
+}
