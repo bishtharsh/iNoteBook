@@ -237,6 +237,17 @@ body.dark .sideBar li a:hover .Text {
     color: var(--text-color);
 }
 
+.active-link {
+    background-color: var(--primary-color) !important; /* Use your preferred color */
+    border-radius: 10px;
+    color: var(--sideBar-color);
+}
+  
+.active-link .icon {
+    color: var(--sideBar-color);
+}
+
+
 .sideBar .menu-bar {
     height: calc(100% - 55px);
     display: flex;

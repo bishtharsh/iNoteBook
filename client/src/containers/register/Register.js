@@ -98,6 +98,28 @@ function Register() {
       saveUser();
     }
   }
+
+  const socialLogin = async (provider) => {
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      console.log("User logged in:", user);
+      Toast.fire({
+        icon: "success",
+        title: `Welcome ${user.displayName}!`,
+      });
+      // You can save the user info to your backend if you want
+      navigate(ROUTES.home.name); // redirect to home after login
+    } catch (error) {
+      console.error(error);
+      Swal.fire({
+        title: "Error",
+        text: error.message,
+        icon: "error",
+      });
+    }
+  };
+
   return <div className='' style={{minHeight:'98vh',height: 'auto', overflowY:'auto'}}>
     {/* <Header/> */}
     <div className='row p-2 m-2 h-100'>

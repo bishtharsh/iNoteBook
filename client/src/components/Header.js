@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './style.css';  // Ensure that your CSS file is correctly imported
 import logo from '../assets/logo(T).png';
 import { Link } from 'react-router-dom';
@@ -20,6 +20,9 @@ function Header({ isSidebarOpen, toggleSidebar, toggleDarkMode, isDarkMode }) {
       toast.onmouseleave = Swal.resumeTimer;
     }
   });
+
+  const { pathname } = useLocation();
+  const isActive = (href) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
 
   const handleLogout = async() =>{
     const confirmDelete = await Swal.fire({
@@ -83,31 +86,31 @@ function Header({ isSidebarOpen, toggleSidebar, toggleDarkMode, isDarkMode }) {
             <ul className="menu-links">
               {/* Other menu items */}
               <li>
-                <Link to={ROUTES.home.name} data-toggle="tooltip" data-placement="right" title="Home">
+                <Link to={ROUTES.home.name} data-toggle="tooltip" data-placement="right" title="Home"  className={isActive(ROUTES.home.name) ? 'active-link' : ''}>
                   <i className="bx bx-home-alt icon"></i>
                   <span className="Text nav-text">Home</span>
                 </Link>
               </li>
               <li>
-                <Link to={ROUTES.about.name} data-toggle="tooltip" data-placement="right" title="About US">
+                <Link to={ROUTES.about.name} data-toggle="tooltip" data-placement="right" title="About US"  className={isActive(ROUTES.about.name) ? 'active-link' : ''}>
                   <i className="bx bx-info-circle icon"></i>
                   <span className="Text nav-text">About</span>
                 </Link>
               </li>
               <li>
-                <Link to={ROUTES.contact.name} data-toggle="tooltip" data-placement="right" title="Contact Us">
+                <Link to={ROUTES.contact.name} data-toggle="tooltip" data-placement="right" title="Contact Us"  className={isActive(ROUTES.contact.name) ? 'active-link' : ''}>
                   <i className="bx bx-phone icon"></i>
                   <span className="Text nav-text">Contact</span>
                 </Link>
               </li>
               <li>
-                <Link to={ROUTES.support.name} data-toggle="tooltip" data-placement="right" title="Support">
+                <Link to={ROUTES.support.name} data-toggle="tooltip" data-placement="right" title="Support"  className={isActive(ROUTES.support.name) ? 'active-link' : ''}>
                   <i className="bx bx-support icon"></i>
                   <span className="Text nav-text">Support</span>
                 </Link>
               </li>
               <li>
-                <Link to={ROUTES.profile.name}data-toggle="tooltip" data-placement="right"  title="Profile">
+                <Link to={ROUTES.profile.name}data-toggle="tooltip" data-placement="right"  title="Profile"  className={isActive(ROUTES.profile.name) ? 'active-link' : ''}>
                   <i className='bx bx-user icon' ></i>
                   <span className="Text nav-text">Profile</span>
                 </Link>
