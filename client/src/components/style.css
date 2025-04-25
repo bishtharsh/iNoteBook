@@ -247,6 +247,10 @@ body.dark .sideBar li a:hover .Text {
     color: var(--sideBar-color);
 }
 
+body.dark .active-link .icon {
+    color: var(--text-color);
+}
+
 
 .sideBar .menu-bar {
     height: calc(100% - 55px);
